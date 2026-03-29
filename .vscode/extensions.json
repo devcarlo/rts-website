@@ -1,0 +1,7 @@
+{
+  // Recommended extensions to enable an in-editor preview workflow
+  "recommendations": [
+    "ms-vscode.live-server",
+    "ritwickdey.liveserver"
+  ]
+}
