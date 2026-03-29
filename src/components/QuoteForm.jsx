@@ -183,6 +183,11 @@ export default function QuoteForm() {
 
             <div className="mt-4 space-y-4 text-slate-200">
               <div className="rounded-2xl bg-slate-950/60 p-4">
+                <div className="font-semibold">Pressure Washing</div>
+                <div className="text-orange-300">Starting at $80 by service type</div>
+              </div>
+
+              <div className="rounded-2xl bg-slate-950/60 p-4">
                 <div className="font-semibold">Appliance Delivery</div>
                 <div className="text-orange-300">$120 – $250 per delivery</div>
               </div>

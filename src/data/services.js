@@ -2,14 +2,16 @@ export const services = [
   {
     title: "Pressure Washing",
     badge: "Exterior Cleaning",
-    price: "Custom quote by surface and size",
+    price: "Starting at $80",
     icon: "💦",
     items: [
-      "Driveways",
-      "Sidewalks",
-      "House Washing",
-      "Roof Soft Wash",
-      "Fence Cleaning",
+      "Driveway Cleaning — $120",
+      "Sidewalk Cleaning — $80",
+      "House Washing — $250",
+      "Roof Soft Wash — $300",
+      "Fence Cleaning — $120",
+      "Patio/Deck Cleaning — $150",
+      "Garage Floor Cleaning — $100",
     ],
     description:
       "Residential and light commercial pressure washing with careful treatment for each surface.",
