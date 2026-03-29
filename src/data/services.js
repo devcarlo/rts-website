@@ -1,5 +1,20 @@
 export const services = [
   {
+    title: "Pressure Washing",
+    badge: "Exterior Cleaning",
+    price: "Custom quote by surface and size",
+    icon: "💦",
+    items: [
+      "Driveways",
+      "Sidewalks",
+      "House Washing",
+      "Roof Soft Wash",
+      "Fence Cleaning",
+    ],
+    description:
+      "Residential and light commercial pressure washing with careful treatment for each surface.",
+  },
+  {
     title: "Appliance Delivery",
     badge: "Primary Focus",
     price: "$120 – $250 per delivery",

@@ -10,9 +10,9 @@ export default function AboutOwnerSection() {
             Professional, reliable, and hands-on
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-300">
-            Rossy Transportation Services is built around responsive service, dependable delivery,
-            and strong communication from pickup to drop-off. As an owner-operated business,
-            every load is handled with professionalism and care.
+            RTS Pressure Washing & Transportation is built around responsive service,
+            dependable work, and strong communication. As an owner-operated business,
+            every job is handled with professionalism and care.
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -39,9 +39,11 @@ export default function AboutOwnerSection() {
           </div>
           <div className="p-6">
             <h3 className="text-2xl font-bold">Owner & Operator</h3>
+            <p className="mt-2 text-lg font-semibold text-orange-300">Franco Rossy</p>
+            <p className="mt-1 text-slate-200">813-809-9840</p>
             <p className="mt-2 text-slate-300">
-              Dedicated to building a trusted transportation brand focused on appliance delivery,
-              freight support, and customer-first service.
+              Dedicated to building a trusted local brand focused on pressure washing,
+              transport support, and customer-first service.
             </p>
           </div>
         </div>

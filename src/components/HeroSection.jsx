@@ -4,14 +4,14 @@ export default function HeroSection() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="inline-block rounded-full bg-orange-500/10 px-4 py-1 text-sm text-orange-300">
-            Owner-Operated Delivery Solutions
+            Owner-Operated Exterior & Delivery Solutions
           </p>
           <h1 className="mt-4 text-4xl font-black sm:text-5xl">
-            Reliable Appliance Delivery & Transportation Services
+            RTS Pressure Washing & Transportation
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-200">
-            Dependable local delivery for appliances, freight, and select long-distance loads.
-            Professional communication, careful handling, and straightforward pricing.
+            Professional pressure washing plus dependable appliance and freight transport.
+            Local service, strong communication, and straightforward pricing.
           </p>
 
           <div className="mt-8 flex gap-4">
@@ -33,7 +33,7 @@ export default function HeroSection() {
         <div className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl">
           <img
             src="/images/logo.png"
-            alt="Rossy Transportation Services logo"
+            alt="RTS Pressure Washing & Transportation logo"
             className="w-full rounded-3xl bg-white object-cover"
           />
         </div>

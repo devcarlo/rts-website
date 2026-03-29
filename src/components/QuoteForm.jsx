@@ -118,6 +118,7 @@ export default function QuoteForm() {
               value={formData.serviceType}
               onChange={handleChange}
             >
+              <option>Pressure Washing</option>
               <option>Appliance Delivery</option>
               <option>Local Freight / Store Delivery</option>
               <option>Pallet / Long-Distance Load</option>
@@ -194,14 +195,6 @@ export default function QuoteForm() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900 p-6">
-            <h3 className="text-xl font-bold">Best fit for long-distance loads</h3>
-            <div className="mt-4 space-y-3 text-slate-300">
-              <p>✔ Load pays well</p>
-              <p>✔ Fuel + time create strong profit</p>
-              <p>✔ Route makes sense operationally</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
