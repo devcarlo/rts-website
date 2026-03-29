@@ -159,7 +159,15 @@ const smsClient = twilioReady
 
 const trimValue = (value) => (typeof value === "string" ? value.trim() : "");
 
-const formatSms = (quote) => {
+const normalizePhone = (phone) => {
+  if (!phone) {
+    return "";
+  }
+
+  return phone.startsWith("+") ? phone : `+${phone}`;
+};
+
+const formatAdminSms = (quote) => {
   const dateLabel = quote.moveDate || "Not specified";
 
   return [
@@ -172,6 +180,19 @@ const formatSms = (quote) => {
     `Pickup: ${quote.pickupLocation}`,
     `Drop-off: ${quote.dropoffLocation}`,
     `Details: ${quote.details}`,
+  ].join("\n");
+};
+
+const formatCustomerSms = (quote) => {
+  const dateLabel = quote.moveDate || "Not specified";
+
+  return [
+    `Thanks ${quote.fullName}, we received your quote request.`,
+    `Service: ${quote.serviceType}`,
+    `Date: ${dateLabel}`,
+    `Pickup: ${quote.pickupLocation}`,
+    `Drop-off: ${quote.dropoffLocation}`,
+    "We will contact you shortly.",
   ].join("\n");
 };
 
@@ -209,26 +230,51 @@ app.post("/api/quotes", async (req, res) => {
   }
 
   const quoteId = await insertQuote(quote);
-  let smsStatus = "skipped";
+  let smsAdminStatus = "skipped";
+  let smsCustomerStatus = "skipped";
+  const customerPhone = normalizePhone(quote.phone);
 
   if (smsClient) {
     try {
       await smsClient.messages.create({
         messagingServiceSid: twilioMessagingServiceSid,
         to: twilioToNumber,
-        body: formatSms(quote),
+        body: formatAdminSms(quote),
       });
-      smsStatus = "sent";
+      smsAdminStatus = "sent";
     } catch (error) {
-      smsStatus = "failed";
-      console.error("Twilio send failed:", error);
+      smsAdminStatus = "failed";
+      console.error("Twilio admin send failed:", error);
+    }
+
+    if (customerPhone) {
+      try {
+        await smsClient.messages.create({
+          messagingServiceSid: twilioMessagingServiceSid,
+          to: customerPhone,
+          body: formatCustomerSms(quote),
+        });
+        smsCustomerStatus = "sent";
+      } catch (error) {
+        smsCustomerStatus = "failed";
+        console.error("Twilio customer send failed:", error);
+      }
     }
   }
+
+  const smsStatus =
+    smsAdminStatus === "failed" || smsCustomerStatus === "failed"
+      ? "failed"
+      : smsAdminStatus === "sent" || smsCustomerStatus === "sent"
+        ? "sent"
+        : "skipped";
 
   return res.status(201).json({
     success: true,
     id: quoteId,
     smsStatus,
+    smsAdminStatus,
+    smsCustomerStatus,
   });
 });
 
