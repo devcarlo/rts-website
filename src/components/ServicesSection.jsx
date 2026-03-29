@@ -16,11 +16,11 @@ export default function ServicesSection() {
         </p>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         {services.map((service) => (
           <div
             key={service.title}
-            className="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-xl"
+            className="h-full rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-xl"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="text-4xl">{service.icon}</div>

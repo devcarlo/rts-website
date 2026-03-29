@@ -76,6 +76,10 @@ export default function QuoteForm() {
           Fill out the form below to request a quote for appliance delivery, local freight,
           or long-distance loads.
         </p>
+        <p className="mt-4 text-slate-200">
+          Call for a quote today at <a className="font-semibold text-orange-300" href="tel:+18138099840">813-809-9840</a>,
+          or submit the form below for a quote.
+        </p>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
